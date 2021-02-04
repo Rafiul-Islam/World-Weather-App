@@ -11,7 +11,7 @@ const App = () => {
             const data = await fetchWeather(query)
             setWeather(data)
             setQuery('')
-            // console.log(data)
+            console.log(data)
         }
     }
     return (
@@ -28,6 +28,10 @@ const App = () => {
                         {Math.round(weather.main.temp)}
                         <sup>&deg;C</sup>
                     </div>
+                    <div className="city-temp-min-max">
+                        {Math.round(weather.main.temp_min)}/{Math.round(weather.main.temp_max)}
+                        <sup>&deg;C</sup>
+                    </div>
                     <div className="info">
                         <img className="city-icon"
                              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
@@ -38,6 +42,6 @@ const App = () => {
             )}
         </div>
     );
-};
+}
 
 export default App;
