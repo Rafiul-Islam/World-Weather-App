@@ -11,7 +11,7 @@ const App = () => {
             const data = await fetchWeather(query)
             setWeather(data)
             setQuery('')
-            console.log(data)
+            //console.log(data)
         }
     }
     return (
